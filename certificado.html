@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--contactus23:56  -->
+  <!--home-123:03  -->
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -21,7 +21,11 @@
 
     <link rel="stylesheet" href="css/linearicons-free.css" />
 
-    <link rel="stylesheet" href="css/simple-line-icons.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <link rel="stylesheet" href="vendor/flexslider/flexslider.css" />
+
+    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.css" />
 
     <link rel="stylesheet" href="vendor/fancybox/css/fancybox.css" />
 
@@ -91,8 +95,8 @@
               <ul class="nav navbar-nav">
                 <li><a href="niveles.html">NIVELES</a></li>
                 <li><a href="#">INSTRUCCION</a></li>
-                <li><a href="certificado.html">CERTIFICADOS</a></li>
-                <li class="active"><a href="mapa.html">MAPA</a></li>
+                <li class="active"><a href="certificado.html">CERTIFICADOS</a></li>
+                <li><a href="mapa.html">MAPA</a></li>
               </ul>
             </div>
           </nav>
@@ -100,27 +104,19 @@
       </div>
     </header>
 
-    <div class="breadcrumb-section">
+    <section class="about-with-slide">
       <div class="container">
         <div class="row">
-          <header class="entry-header">
-            <h1 class="entry-title">REVISA NUESTRO MAPA</h1>
-          </header>
-        </div>
-      </div>
-    </div>
-
-    <div class="page-spacer clearfix">
-      <div class="container">
-        <div class="row">
-          
-          <div class="col-xs-12 col-sm-12 map-location">
-            <h3 class="head-border-default">Mapa y Ubicaciones</h3>
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1c2CKNqILMWwgvpG6A7By8uzKVgzkjDA&ehbc=2E312F&noprof=1" width="100%" height="480"></iframe>
+          <div class="col-xs-12 aboutus">
+            <div class="row">
+              <h3><span>Conoceme</span> Nuestra Certificación</h3>
+              <img src="./images/certificado.jpg" style="width: 100%;" alt="" srcset="">
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
 
     <footer class="site-footer" id="colophon">
       <div class="container">
@@ -133,9 +129,7 @@
           <div class="col-xs-12 col-sm-4 footer-widget">
             <aside class="widget widget_text">
               <div class="textwidget">
-                Aprenderas sobre el lenguaje de señas de una manera didactica y
-                entretenida donde tendras una experiencia unica y emocionante se
-                parte de la inclusiòn.
+                Aprenderas sobre el lenguaje de señas de una manera didactica y entretenida donde tendras una experiencia unica y emocionante se parte de la inclusiòn.
               </div>
             </aside>
             <aside class="widget socialmedia-widget">
@@ -168,36 +162,85 @@
           <div class="col-xs-12 col-sm-4 footer-widget">
             <aside class="widget widget_nav_menu">
               <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shortcodes</a></li>
-                <li><a href="#">about US</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">classes</a></li>
-                <li><a href="#">Contact US</a></li>
-                <li><a href="#">Teachers</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Events</a></li>
+                <li><a href="home-1.html#">Home</a></li>
+                <li><a href="home-1.html#">Shortcodes</a></li>
+                <li><a href="home-1.html#">about US</a></li>
+                <li><a href="home-1.html#">Blog</a></li>
+                <li><a href="home-1.html#">classes</a></li>
+                <li><a href="home-1.html#">Contact US</a></li>
+                <li><a href="home-1.html#">Teachers</a></li>
+                <li><a href="home-1.html#">Privacy Policy</a></li>
+                <li><a href="home-1.html#">Events</a></li>
               </ul>
             </aside>
           </div>
           <div class="col-xs-12 col-sm-4 footer-widget">
             <aside class="widget newsletter-widget">
-              <h3>Nuestras redes sociales</h3>
+              <h3>Sign up now</h3>
               <p>
                 When an printer took a galley of type and scrambled it to make a
                 type specimen book.
               </p>
+              <form id="newsletter">
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Email"
+                />
+                <button
+                  type="submit"
+                  value=""
+                  class="btn btn-orange btn-medium"
+                >
+                  <i class="lnr lnr-arrow-right"></i>
+                </button>
+              </form>
             </aside>
           </div>
         </div>
       </div>
+
+
     </footer>
 
-    <script src="js/jquery.validate.min.js"></script>
+
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <script src="js/jquery.form.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="vendor/flexslider/jquery.flexslider-min.js"></script>
+
+    <script src="vendor/owlcarousel/owl.carousel.js"></script>
+    <script>
+      jQuery.noConflict();
+      jQuery(document).ready(function ($) {
+        var owl = $("#owl-classes");
+
+        owl.owlCarousel({
+          items: 3, //10 items above 1000px browser width
+          itemsDesktop: [1000, 3], //5 items between 1000px and 901px
+          itemsDesktopSmall: [900, 3], // 3 items betweem 900px and 601px
+          itemsTablet: [640, 2],
+          itemsMobile: [480, 1], // itemsMobile disabled - inherit from itemsTablet option
+          navigation: false,
+          pagination: true,
+          autoPlay: true,
+        });
+
+        var owl = $("#owl-teachers");
+
+        owl.owlCarousel({
+          items: 2, //10 items above 1000px browser width
+          itemsDesktop: [1000, 2], //5 items between 1000px and 901px
+          itemsDesktopSmall: [900, 2], // 3 items betweem 900px and 601px
+          itemsTablet: [600, 1],
+          itemsMobile: [480, 1], // itemsMobile disabled - inherit from itemsTablet option
+          navigation: false,
+          pagination: true,
+          autoPlay: true,
+        });
+      });
+    </script>
 
     <script src="js/theme.js"></script>
 
@@ -214,8 +257,96 @@
       jQuery(".fancybox").fancybox();
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?callback=mapBox"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+
+    <style>
+
+.containerListNiveles {
+      display: flex; /* Activa flexbox en el contenedor */
+      width: 100%; /* Opcional: ancho completo del contenedor */
+    }
+
+    .column {
+      flex: 1; /* Hace que ambas columnas ocupen el mismo espacio */
+      padding: 20px; /* Espaciado interno para mejor apariencia */
+      border: 0px solid transparent; /* Borde opcional para cada columna */
+    }
+
+      .itemNivel{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .rectangle{
+        color: white;
+        text-align: center;
+        width: 1.5rem;
+      }
+
+      .round-div {
+        width: 1.3rem;
+        height: 1.3rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        background-color: #62AF26;
+        border-radius: 50%; /* Establece el radio para hacer el div redondo */
+      }
+
+      .containerSubInput {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+      }
+
+      .containerItem {
+        background-color: #0956b2;
+        padding: 1rem;
+        border-radius: 1rem;
+        border-style: solid;
+        border-width: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contrainerForm {
+        height: auto;
+        width: auto;
+        background-color: transparent;
+        position: absolute;
+        z-index: 99;
+        top: 50%; /* Coloca la mitad superior del div en el centro vertical */
+        left: 7rem; /* Coloca el borde izquierdo del div en el borde izquierdo del contenedor */
+        transform: translateY(-50%); /* Centra verticalmente el div */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .containerImput {
+        background-color: #0956b2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 1rem;
+        border-style: solid;
+        border-width: 0px;
+      }
+
+      input:focus {
+        border: none;
+        outline: none; /* Esto elimina el contorno predeterminado en algunos navegadores */
+      }
+    </style>
   </body>
 
-  <!--contactus23:56  -->
+  <!--home-123:18  -->
 </html>
